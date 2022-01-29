@@ -1,27 +1,28 @@
 package com;
 
-public class File {
-    private String fileName;
-    private String filenameExtension;
+public class File implements Element{
+    private String name;
 
-    public File(String fileName, String filenameExtension) {
-        this.fileName = fileName;
-        this.filenameExtension = filenameExtension;
+    public File(String fileName) {
+        this.name = fileName;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getName() {
+        return name;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFilenameExtension() {
-        return filenameExtension;
+    @Override
+    public void createElement() {
     }
 
-    public void setFilenameExtension(String filenameExtension) {
-        this.filenameExtension = filenameExtension;
+    @Override
+    public String toString() {
+        return "File{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

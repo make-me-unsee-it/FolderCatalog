@@ -1,0 +1,7 @@
+создать класс FileSystem:
+в нем
+- методы create() со сканнером и create(String) для тестирования
+внутренний для него private метод для работы с regex-ом
+
+- метод print со StringBuilder-ом
+
