@@ -32,12 +32,12 @@ public class FileSystem {
 
             // добавляем новый каталог первого уровня
             if ((!storage.containsKey(elements[n]))) {
-                storage.put(elements[n], new Folder(elements, n + 1));
+                storage.put(elements[n], new Folder(elements, n));
 
                 // если такая папка уже есть. Достать. Поменять содержимое. Положить обратно.
             } else {
                 Element metaElement = storage.get(elements[n]);
-                metaElement.createElement(elements, n + 1, storage.get(elements[n]));
+                metaElement.createElement(elements, n, storage.get(elements[n]));
                 storage.put(elements[n], metaElement);
             }
         }
@@ -62,4 +62,11 @@ public class FileSystem {
     public String toString() {
         return "FileSystem" + storage;
     }
+
+    public String print() {
+        int hashMapSize = storage.size();
+        String result = "FILESYSTEM:\n" + hashMapSize + "\n" + storage.values();
+        return result;
+    }
+
 }

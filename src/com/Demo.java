@@ -7,6 +7,7 @@ public class Demo {
         fileSystem.elementAdd("root/folder1/list.txt");
         fileSystem.elementAdd("root2/folder3");
         System.out.println(fileSystem);
+        System.out.println(fileSystem.print());
 
     }
 }
