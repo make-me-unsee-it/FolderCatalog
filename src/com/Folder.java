@@ -1,6 +1,5 @@
 package com;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class Folder implements Element {
@@ -59,11 +58,6 @@ public class Folder implements Element {
         if ((n != elements.length - 1)) {
             // если на этом уровне такой папки нет - создаем новую ветку каталогов
             if ((!oldStorage.getStorage().containsKey(elements[n]))) {
-
-
-                System.out.println((!oldStorage.getStorage().containsKey(elements[n])));            // CHECK OUT
-                System.out.println("аргументы String" + Arrays.toString(elements) + ", (n + 1)= " + (n + 1));
-                System.out.println(oldStorage);
                 HashMap<String, Element> metaStorage = oldStorage.getStorage();
                 metaStorage.put(elements[n], new Folder(elements, n + 1));
                 return new Folder(oldStorage.getName(),metaStorage);
@@ -89,7 +83,9 @@ public class Folder implements Element {
                 }
                 // или создаем папку
                 else {
-                    return oldStorage.getStorage().put(elements[n], new Folder(elements[n]));
+                    HashMap<String, Element> metaStorage = oldStorage.getStorage();
+                    metaStorage.put(elements[n], new Folder(elements[n]));
+                    return new Folder(oldStorage.getName(),metaStorage);
                 }
             }
 
@@ -99,10 +95,7 @@ public class Folder implements Element {
 
     @Override
     public String toString() {
-        return "Folder{" +
-                "name='" + name + '\'' +
-                ", storage=" + storage +
-                '}';
+        return "{" + storage + '}';
     }
 }
 

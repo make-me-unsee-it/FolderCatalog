@@ -36,9 +36,9 @@ public class FileSystem {
 
                 // если такая папка уже есть. Достать. Поменять содержимое. Положить обратно.
             } else {
-                System.out.println(storage.get(elements[n]));
-                Element element = (storage.get(elements[n])).createElement(elements, n + 1, storage.get(elements[n]));
-                storage.put(elements[n], element);
+                Element metaElement = storage.get(elements[n]);
+                metaElement.createElement(elements, n + 1, storage.get(elements[n]));
+                storage.put(elements[n], metaElement);
             }
         }
 
@@ -60,8 +60,6 @@ public class FileSystem {
 
     @Override
     public String toString() {
-        return "FileSystem{" +
-                "storage=" + storage +
-                '}';
+        return "FileSystem" + storage;
     }
 }

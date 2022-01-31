@@ -20,9 +20,7 @@ public class File implements Element{
 
     @Override
     public String toString() {
-        return "File{" +
-                "name='" + name + '\'' +
-                '}';
+        return null;
     }
 
     @Override
