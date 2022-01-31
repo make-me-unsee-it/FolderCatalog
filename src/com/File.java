@@ -1,27 +1,32 @@
 package com;
 
-public class File {
-    private String fileName;
-    private String filenameExtension;
+import java.util.HashMap;
 
-    public File(String fileName, String filenameExtension) {
-        this.fileName = fileName;
-        this.filenameExtension = filenameExtension;
+public class File implements Element{
+    private final String name;
+
+    public File(String fileName) {
+        this.name = fileName;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getName() {
+        return name;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    @Override
+    public Element createElement(String[] elements, int n, Element oldStorage) {
+        return null;
     }
 
-    public String getFilenameExtension() {
-        return filenameExtension;
+    @Override
+    public String toString() {
+        return "File{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
-    public void setFilenameExtension(String filenameExtension) {
-        this.filenameExtension = filenameExtension;
+    @Override
+    public HashMap<String, Element> getStorage() {
+        return null;
     }
 }
