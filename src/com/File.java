@@ -1,7 +1,9 @@
 package com;
 
+import java.util.HashMap;
+
 public class File implements Element{
-    private String name;
+    private final String name;
 
     public File(String fileName) {
         this.name = fileName;
@@ -11,12 +13,9 @@ public class File implements Element{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
-    public void createElement() {
+    public Element createElement(String[] elements, int n, Element oldStorage) {
+        return null;
     }
 
     @Override
@@ -24,5 +23,10 @@ public class File implements Element{
         return "File{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public HashMap<String, Element> getStorage() {
+        return null;
     }
 }
