@@ -1,6 +1,8 @@
 package com;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class FileSystem {
     private HashMap<String, Element> storage;
@@ -63,10 +65,17 @@ public class FileSystem {
         return "FileSystem" + storage;
     }
 
-    public String print() {
-        int hashMapSize = storage.size();
-        String result = "FILESYSTEM:\n" + hashMapSize + "\n" + storage.values();
-        return result;
+    public static <K, V> String mapToString(Map<K, V> map) {
+        return map.entrySet()
+                .stream()
+                .map(entry -> entry.getKey() + "\n\t" + entry.getValue())
+                .collect(Collectors.joining("\n", "", "\n"));
     }
+
+    public String print() {
+        System.out.println("ТЕСТЫ:");
+        return mapToString(storage);
+    }
+
 
 }
