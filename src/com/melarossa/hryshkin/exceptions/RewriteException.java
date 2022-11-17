@@ -1,4 +1,4 @@
-package com;
+package com.melarossa.hryshkin.exceptions;
 
 public class RewriteException extends Exception{
         public RewriteException(String msg) {

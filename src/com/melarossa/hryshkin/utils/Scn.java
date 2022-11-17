@@ -1,4 +1,4 @@
-package com;
+package com.melarossa.hryshkin.utils;
 
 import java.util.Scanner;
 
